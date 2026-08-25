@@ -1,0 +1,10 @@
+{
+  "id": "mario-gripsou",
+  "title": "Mario Gripsou",
+  "description": "Saute sous le bloc pour faire sortir un maximum de pièces.",
+  "renderer": "canvas",
+  "tags": ["arcade", "score", "one-button"],
+  "players": 1,
+  "mobile": true,
+  "status": "published"
+}
