@@ -1,5 +1,5 @@
 import './style.css';
-import { createGameLoop, loadScore, saveScore } from '@mini-games/core';
+import { createGameLoop, loadScore, saveScore, setupFullscreen } from '@mini-games/core';
 
 function getRequiredElement<T extends Element>(selector: string): T {
   const element = document.querySelector<T>(selector);
@@ -10,9 +10,13 @@ function getRequiredElement<T extends Element>(selector: string): T {
 const canvas = getRequiredElement<HTMLCanvasElement>('#game');
 const scoreEl = getRequiredElement<HTMLElement>('#score');
 const bestEl = getRequiredElement<HTMLElement>('#best');
+const gameSurface = getRequiredElement<HTMLElement>('#game-surface');
+const fullscreenButton = getRequiredElement<HTMLButtonElement>('#fullscreen-toggle');
 const context = canvas.getContext('2d');
 if (!context) throw new Error('Canvas 2D unavailable');
 const ctx: CanvasRenderingContext2D = context;
+
+setupFullscreen(gameSurface, fullscreenButton);
 
 const width = 420;
 const height = 640;
@@ -34,7 +38,6 @@ bestEl.textContent = String(best);
 function jump() {
   const onGround = player.y >= groundY - player.h - 0.5;
   if (onGround) {
-    // Enough impulse to reach the block bottom at y=343 with margin.
     player.vy = -960;
     squash = 1;
   }
