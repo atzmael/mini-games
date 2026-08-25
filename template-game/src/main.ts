@@ -14,8 +14,8 @@ app.innerHTML = `
       <p>Renderer à définir dans ce chat : DOM, Canvas, Phaser, Three.js, D3.js…</p>
     </header>
 
-    <section id="game-stage" class="game-stage" aria-label="Zone de jeu">
-      <div class="game-surface">
+    <section class="game-stage" aria-label="Zone de jeu">
+      <div id="game-surface" class="game-surface">
         <section id="game-root" class="game-root"></section>
         <div id="game-hud" class="game-hud" aria-live="polite"></div>
         <button
@@ -33,8 +33,8 @@ app.innerHTML = `
   </main>
 `;
 
-const stage = document.querySelector<HTMLElement>('#game-stage');
+const surface = document.querySelector<HTMLElement>('#game-surface');
 const fullscreenButton = document.querySelector<HTMLButtonElement>('#fullscreen-toggle');
-if (!stage || !fullscreenButton) throw new Error('Missing game stage');
+if (!surface || !fullscreenButton) throw new Error('Missing game surface');
 
-setupFullscreen(stage, fullscreenButton);
+setupFullscreen(surface, fullscreenButton);
