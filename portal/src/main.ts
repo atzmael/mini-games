@@ -17,6 +17,7 @@ const app = document.querySelector<HTMLDivElement>('#app');
 if (!app) throw new Error('Missing #app root');
 
 const published = (games as Game[]).filter((game) => game.status === 'published');
+const baseUrl = import.meta.env.BASE_URL;
 
 app.innerHTML = `
   <main class="portal-shell">
@@ -35,7 +36,7 @@ app.innerHTML = `
           <h2>${game.title}</h2>
           <p>${game.description || 'Description à venir.'}</p>
           <div class="game-card__tags">${game.tags.map((tag) => `<span>${tag}</span>`).join('')}</div>
-          <a href="${game.path}">Jouer</a>
+          <a href="${baseUrl}${game.path}">Jouer</a>
         </article>
       `).join('') : '<p class="empty-state">Aucun jeu publié pour le moment.</p>'}
     </section>
