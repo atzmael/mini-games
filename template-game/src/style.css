@@ -18,8 +18,13 @@ button, input { font: inherit; }
 .game-fullscreen:hover { transform: translateY(-1px); background: rgba(79,70,229,.74); border-color: rgba(129,140,248,.6); }
 .game-fullscreen:focus-visible { outline: 2px solid #a78bfa; outline-offset: 3px; }
 
-.game-surface:fullscreen { width: 100vw; height: 100vh; max-width: none; min-height: 0; border: 0; border-radius: 0; box-shadow: none; background: #05070d; }
-.game-surface:fullscreen .game-fullscreen { top: max(1rem, env(safe-area-inset-top)); right: max(1rem, env(safe-area-inset-right)); }
+.game-surface:fullscreen,
+.game-surface.is-fallback-fullscreen { width: 100vw; height: 100dvh; max-width: none; min-height: 0; border: 0; border-radius: 0; box-shadow: none; background: #05070d; }
+.game-surface.is-fallback-fullscreen { position: fixed; inset: 0; z-index: 9999; }
+html.game-fullscreen-active,
+body.game-fullscreen-active { overflow: hidden; overscroll-behavior: none; }
+.game-surface:fullscreen .game-fullscreen,
+.game-surface.is-fallback-fullscreen .game-fullscreen { top: max(1rem, env(safe-area-inset-top)); right: max(1rem, env(safe-area-inset-right)); }
 
 canvas { display: block; }
 
