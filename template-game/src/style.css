@@ -1,0 +1,10 @@
+* { box-sizing: border-box; }
+html, body, #app { min-height: 100%; margin: 0; }
+body { font-family: system-ui, sans-serif; background: #0b1020; color: #f8fafc; }
+button, input { font: inherit; }
+.game-shell { min-height: 100vh; display: grid; grid-template-rows: auto 1fr; }
+.game-header { padding: 1rem 1.25rem; border-bottom: 1px solid #1f2937; }
+.game-header h1 { margin: 0 0 .25rem; font-size: 1.25rem; }
+.game-header p { margin: 0; color: #94a3b8; font-size: .9rem; }
+.game-root { min-height: 0; position: relative; overflow: hidden; }
+canvas { display: block; }
