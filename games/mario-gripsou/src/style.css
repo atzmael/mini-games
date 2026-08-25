@@ -208,29 +208,45 @@ canvas {
   font-weight: 800;
 }
 
-.game-surface:fullscreen {
+.game-surface:fullscreen,
+.game-surface.is-fallback-fullscreen {
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
   display: grid;
   place-items: center;
   background: #05070d;
 }
-.game-surface:fullscreen .game-playfield {
-  width: min(100vw, calc(100vh * .65625));
+.game-surface.is-fallback-fullscreen {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+}
+html.game-fullscreen-active,
+body.game-fullscreen-active {
+  overflow: hidden;
+  overscroll-behavior: none;
+  touch-action: none;
+}
+.game-surface:fullscreen .game-playfield,
+.game-surface.is-fallback-fullscreen .game-playfield {
+  width: min(100vw, calc(100dvh * .65625));
   max-width: none;
   border: 0;
   border-radius: 0;
   box-shadow: none;
 }
-.game-surface:fullscreen .hud {
+.game-surface:fullscreen .hud,
+.game-surface.is-fallback-fullscreen .hud {
   top: max(14px, env(safe-area-inset-top));
   left: max(14px, env(safe-area-inset-left));
 }
-.game-surface:fullscreen .fullscreen-toggle {
+.game-surface:fullscreen .fullscreen-toggle,
+.game-surface.is-fallback-fullscreen .fullscreen-toggle {
   top: max(14px, env(safe-area-inset-top));
   right: max(14px, env(safe-area-inset-right));
 }
-.game-surface:fullscreen .hint {
+.game-surface:fullscreen .hint,
+.game-surface.is-fallback-fullscreen .hint {
   bottom: max(14px, env(safe-area-inset-bottom));
 }
 
