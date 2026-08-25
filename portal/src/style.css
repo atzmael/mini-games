@@ -1,0 +1,17 @@
+* { box-sizing: border-box; }
+html, body { margin: 0; min-height: 100%; }
+body { font-family: system-ui, sans-serif; background: #0b1020; color: #f8fafc; }
+a { color: inherit; }
+.portal-shell { width: min(1120px, calc(100% - 2rem)); margin: 0 auto; padding: 4rem 0; }
+.portal-header { margin-bottom: 2.5rem; }
+.portal-header h1 { max-width: 720px; margin: .4rem 0 .75rem; font-size: clamp(2rem, 5vw, 4rem); line-height: 1; }
+.portal-header p { color: #94a3b8; }
+.eyebrow { text-transform: uppercase; letter-spacing: .12em; font-size: .75rem; }
+.games-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; }
+.game-card { border: 1px solid #1f2937; border-radius: 1rem; padding: 1.25rem; background: #111827; }
+.game-card h2 { margin: .75rem 0 .5rem; }
+.game-card p { color: #cbd5e1; }
+.game-card__meta, .game-card__tags { display: flex; flex-wrap: wrap; gap: .5rem; }
+.game-card__meta span, .game-card__tags span { font-size: .75rem; color: #94a3b8; }
+.game-card a { display: inline-block; margin-top: 1rem; text-decoration: none; font-weight: 700; }
+.empty-state { color: #94a3b8; }
