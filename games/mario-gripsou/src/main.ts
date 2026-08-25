@@ -1,14 +1,18 @@
 import './style.css';
 import { createGameLoop, loadScore, saveScore } from '@mini-games/core';
 
-const canvas = document.querySelector<HTMLCanvasElement>('#game');
-const scoreEl = document.querySelector<HTMLElement>('#score');
-const bestEl = document.querySelector<HTMLElement>('#best');
+function getRequiredElement<T extends Element>(selector: string): T {
+  const element = document.querySelector<T>(selector);
+  if (!element) throw new Error(`Missing DOM element: ${selector}`);
+  return element;
+}
 
-if (!canvas || !scoreEl || !bestEl) throw new Error('Missing game DOM');
-
-const ctx = canvas.getContext('2d');
-if (!ctx) throw new Error('Canvas 2D unavailable');
+const canvas = getRequiredElement<HTMLCanvasElement>('#game');
+const scoreEl = getRequiredElement<HTMLElement>('#score');
+const bestEl = getRequiredElement<HTMLElement>('#best');
+const context = canvas.getContext('2d');
+if (!context) throw new Error('Canvas 2D unavailable');
+const ctx: CanvasRenderingContext2D = context;
 
 const width = 420;
 const height = 640;
