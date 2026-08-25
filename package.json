@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "turbo dev",
     "build": "turbo build",
+    "build:pages": "node scripts/build-pages.mjs",
     "typecheck": "turbo typecheck",
     "new": "node scripts/create-game.mjs"
   },
