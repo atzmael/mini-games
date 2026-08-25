@@ -1,0 +1,10 @@
+{
+  "id": "__GAME_ID__",
+  "title": "__GAME_TITLE__",
+  "description": "",
+  "renderer": "dom",
+  "tags": [],
+  "players": 1,
+  "mobile": true,
+  "status": "draft"
+}
