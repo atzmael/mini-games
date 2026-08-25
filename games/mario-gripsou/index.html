@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mario Gripsou</title>
+  </head>
+  <body>
+    <main class="game-shell">
+      <header class="hud">
+        <div>
+          <span class="label">Pièces</span>
+          <strong id="score">0</strong>
+        </div>
+        <div>
+          <span class="label">Record</span>
+          <strong id="best">0</strong>
+        </div>
+      </header>
+      <canvas id="game" aria-label="Mini-jeu de saut pour récupérer des pièces"></canvas>
+      <p class="hint">Espace, clic ou toucher pour sauter.</p>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
