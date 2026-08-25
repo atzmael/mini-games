@@ -35,26 +35,33 @@
         </section>
 
         <section class="game-stage" aria-label="Zone de jeu">
-          <header class="hud">
-            <div class="hud-stat">
-              <span class="label">Pièces</span>
-              <strong id="score">0</strong>
-            </div>
-            <div class="hud-title">
-              <span>Mario Gripsou</span>
-              <small>Saute sous le bloc</small>
-            </div>
-            <div class="hud-stat hud-stat--right">
-              <span class="label">Record</span>
-              <strong id="best">0</strong>
-            </div>
-          </header>
+          <div id="game-surface" class="game-surface">
+            <div class="game-playfield">
+              <canvas id="game" aria-label="Mini-jeu de saut pour récupérer des pièces"></canvas>
 
-          <div class="canvas-frame">
-            <canvas id="game" aria-label="Mini-jeu de saut pour récupérer des pièces"></canvas>
+              <div class="hud" aria-label="Score du jeu">
+                <div class="hud-stat">
+                  <span class="label">Pièces</span>
+                  <strong id="score">0</strong>
+                </div>
+                <div class="hud-stat">
+                  <span class="label">Record</span>
+                  <strong id="best">0</strong>
+                </div>
+              </div>
+
+              <button
+                id="fullscreen-toggle"
+                class="fullscreen-toggle"
+                type="button"
+                aria-label="Passer en plein écran"
+                aria-pressed="false"
+                title="Plein écran"
+              ><span aria-hidden="true">⛶</span></button>
+
+              <p class="hint"><span class="key">Espace</span> ou touche le jeu pour sauter.</p>
+            </div>
           </div>
-
-          <p class="hint"><span class="key">Espace</span> ou touche la zone de jeu pour sauter.</p>
         </section>
       </main>
     </div>
