@@ -15,8 +15,8 @@ try {
     try {
       const raw = await readFile(join(gamesDir, entry.name, 'game.json'), 'utf8');
       const game = JSON.parse(raw);
-      games.push({ ...game, path: `/games/${game.id}/` });
-    } catch (error) {
+      games.push({ ...game, path: `games/${game.id}/` });
+    } catch {
       console.warn(`Skipping ${entry.name}: invalid or missing game.json`);
     }
   }
